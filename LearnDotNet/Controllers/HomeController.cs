@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LearnDoNet.Models;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace LearnDoNet.Controllers
 {
@@ -32,6 +34,24 @@ namespace LearnDoNet.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public JsonResult EasyData()
+        {
+            FileStream file = new FileStream("e:/test.txt", FileMode.Open);
+            StreamReader streamReader = new StreamReader(file);
+            List<double> list = new List<double>();
+            while (!streamReader.EndOfStream)
+            {
+                string strLine = streamReader.ReadLine();
+                string[] strArray = strLine.Split(' ');
+                if (strArray.Length == 3)
+                    list.Add(Convert.ToDouble(strArray[2]));
+            }
+            file.Close();
+            streamReader.Close();
+
+            return Json(list);
         }
     }
 }

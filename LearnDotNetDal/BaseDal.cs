@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 public abstract class BaseDal<T> where T : class, new()
 {
     public string tableName { get; set; }
@@ -14,7 +15,7 @@ public abstract class BaseDal<T> where T : class, new()
 
     public List<T> Load(string columnName, string value)
     {
-sqlcommand
+        SqlCommand command = new SqlCommand();
         string sql = "select * from ";
         return null;
     }
