@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using LearnDoNet.Models;
 using System.IO;
 using Newtonsoft.Json;
+using Learn.LearnDbContext;
 
 namespace LearnDoNet.Controllers
 {
@@ -38,6 +39,7 @@ namespace LearnDoNet.Controllers
 
         public JsonResult EasyData()
         {
+            GetList();
             FileStream file = new FileStream("e:/test.txt", FileMode.Open);
             StreamReader streamReader = new StreamReader(file);
             List<double> list = new List<double>();
@@ -52,6 +54,15 @@ namespace LearnDoNet.Controllers
             streamReader.Close();
 
             return Json(list);
+        }
+
+        public void GetList()
+        {
+            using (var context = new LearnDbContext())
+            {
+                var blogs = context.Spending.ToList();
+            }
+
         }
     }
 }
