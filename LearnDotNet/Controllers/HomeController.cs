@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using LearnDoNet.Models;
 using System.IO;
 using Newtonsoft.Json;
-using Learn.LearnDbContext;
+using LearnDotNet.Dal;
+using LearnDotNet.Model;
 
-namespace LearnDoNet.Controllers
+namespace LearnDotNet.Controllers
 {
     public class HomeController : Controller
     {
