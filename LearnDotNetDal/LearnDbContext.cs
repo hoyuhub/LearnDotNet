@@ -6,9 +6,9 @@ using LearnDotNet.Model;
 namespace LearnDotNet.Dal
 {
 
-    public class LearnDbContext : DbContext
+    public class LearnDotNetDbContext<T> : DbContext where T : class, new()
     {
-        public DbSet<Spending> Spending { get; set; }
+        public DbSet<T> Spending { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

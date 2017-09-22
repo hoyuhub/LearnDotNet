@@ -59,11 +59,8 @@ namespace LearnDotNet.Controllers
 
         public void GetList()
         {
-            using (var context = new LearnDbContext())
-            {
-                var blogs = context.Spending.ToList();
-            }
-
+            SpendingDal dal = new SpendingDal();
+            List<Spending> list = dal.Find();
         }
     }
 }
