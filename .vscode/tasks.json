@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/LearnDotNet/LearnDoNet.csproj"
+                "${workspaceRoot}/LearnDotNet/LearnDotNet.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

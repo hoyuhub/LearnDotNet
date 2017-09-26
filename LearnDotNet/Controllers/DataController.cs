@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace LearnDotNet.Controllers
 {
@@ -15,5 +15,9 @@ namespace LearnDotNet.Controllers
         }
 
         
+        public void Upload()
+        {
+            var file=Request.Form.Files;        
+        }
     }
 }

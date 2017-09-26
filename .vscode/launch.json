@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/LearnDotNet/bin/Debug/netcoreapp2.0/LearnDoNet.dll",
+            "program": "${workspaceRoot}/LearnDotNet/bin/Debug/netcoreapp2.0/LearnDotNet.dll",
             "args": [],
             "cwd": "${workspaceRoot}/LearnDotNet",
             "stopAtEntry": false,
