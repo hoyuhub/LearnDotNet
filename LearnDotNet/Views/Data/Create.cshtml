@@ -1,10 +1,23 @@
-﻿
-@{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿ @{ ViewData["Title"] = "Create"; Layout = "~/Views/Shared/_Layout.cshtml"; }
+<script>
+    function tijiao() {
+        var file = $('#file').file;
+        var data = new FormData();
+        data.append(file.name,file);
+        $.ajax({
+            type: "post",
+            url: "/data/create",
+            data:data,
+            success:function(v){
+                alert(v);
+            }
+        })
 
-<article class="page-container">
+    }
+
+</script>
+
+<!-- <article class="page-container">
     <form action="/data/upload" class="form form-horizontal" enctype="multipart/form-data" id="form-admin-add">
         
         <div class="row cl">
@@ -22,4 +35,15 @@
             </div>
         </div>
     </form>
-</article>
+</article> -->
+
+<form action="/data/upload" enctype="multipart/form-data">
+    <table border="1px soild red">
+
+        <tr>
+            <td><input type="file" id="file"></td>
+            <td><input type="button" onclick="tijiao()" value="提交"></td>
+        </tr>
+    </table>
+
+</form>
