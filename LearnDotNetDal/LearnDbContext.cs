@@ -12,8 +12,8 @@ namespace LearnDotNet.Dal
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Data Source=HOYU-DELL\SQLEXPRESS;Initial Catalog=LearnDotNet;Integrated Security=True;");
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LearnDotNet;Integrated Security=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=HOYU-DELL\SQLEXPRESS;Initial Catalog=LearnDotNet;Integrated Security=True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LearnDotNet;Integrated Security=True;");
         }
     }
 

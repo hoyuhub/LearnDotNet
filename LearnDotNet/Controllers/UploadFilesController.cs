@@ -92,15 +92,17 @@ namespace LearnDotNet.Controllers
 
 
 
-            string[] strArray = list[0].Trim().Split(" ");
-            Spending sp = new Spending();
-            sp.date = Convert.ToDateTime( ("2017." + strArray[0]));
-            sp.sys_date = DateTime.Now;
-            sp.amount =  Convert.ToDecimal(strArray[2]);
-            sp.reason = strArray[1];
-
-            SpendingDal dalSpending = new SpendingDal();
-            dalSpending.Add(sp);
+            for (int i = 0; i < list.Count; i++)
+            {
+                string[] strArray = list[i].Trim().Split(" ");
+                Spending sp = new Spending();
+                sp.date = Convert.ToDateTime(("2017." + strArray[0]));
+                sp.sys_date = DateTime.Now;
+                sp.amount = Convert.ToDecimal(strArray[2]);
+                sp.reason = strArray[1];
+                SpendingDal dalSpending = new SpendingDal();
+                dalSpending.Add(sp);
+            }
 
             return false;
         }
